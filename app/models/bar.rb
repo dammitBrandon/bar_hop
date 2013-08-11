@@ -1,4 +1,3 @@
 class Bar < ActiveRecord::Base
-  # Remember to create a migration!
-
+  has_many :specials
 end
