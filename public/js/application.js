@@ -9,7 +9,9 @@ function initialize() {
     mapOptions);
 
   var bars = [
-  ["Flat Iron",41.91,-87.677,1,], ["Rodan",41.909277,-87.675761,2], ["Rainbo Club",41.878114,-87.629798,3],["The Empty Bottle",41.900356,-87.686826,4],["Division Ale House",41.903515,-87.67653,5]
+  ["Flat Iron",41.91,-87.677,1,"Sun: $4 MGD\nMon: $2 wells"], ["Rodan",41.909277,-87.675761,2, "Sun: 2 for 1 Beers\nMon: $2 PBR"],
+  ["Division Ale House",41.903515,-87.67653,5, "Sun: $10 Buckets \nMon: $6 Top Shelf"],
+  ["Rainbo Club",41.878114,-87.629798,3, "Sun: $5 Jameson \nMon: $1 Beers"],["The Empty Bottle",41.900356,-87.686826,4, "Sun: $6 Shot & a Beer \nMon: None"]
   ];
   // var marker = new google.maps.Marker({
   //   position: map.getCenter(),
@@ -46,22 +48,28 @@ function initialize() {
     type: 'poly'
   };
   
+  var marker = [];
+
   for (var i = 0; i < bars.length; i++) {
     var bar = bars[i];
     var myLatLng = new google.maps.LatLng(bar[1], bar[2]);
-    var marker = new google.maps.Marker({
+    marker[i] = new google.maps.Marker({
       position: myLatLng,
       map: map,
       shadow: shadow,
       icon: image,
       shape: shape,
-      mouseover: console.log("worked"),
       title: bar[0],
-      info: "this allows us to create dynamic attributes",
+      info: bar[4],
       zIndex: bar[3]
     });
-  google.maps.event.addListener(marker, 'click', function() {
-    alert(marker.info);
+  google.maps.event.addListener(marker[i], 'mouseover', function() {
+    $('.info').html(this.title + "\n" + this.info);
+    $('.info').css({"visibility":"visible"});
+  });
+  google.maps.event.addListener(marker, 'mouseout', function() {
+    $('.info').html('');
+    $('.info').css({"visibility":"hidden"});
   });
   }
 

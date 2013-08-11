@@ -9,3 +9,10 @@ body {
 #map-canvas { 
   height: 100% 
 }
+
+.info {
+  position: fixed;
+  top: 0%;
+  right: 40%;
+  visibility: hidden;
+}
