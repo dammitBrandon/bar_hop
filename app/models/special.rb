@@ -1,0 +1,5 @@
+class Special < ActiveRecord::Base
+  # Remember to create a migration!
+  belongs_to :bar
+  
+end
