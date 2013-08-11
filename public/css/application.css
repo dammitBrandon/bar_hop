@@ -2,17 +2,48 @@ html {
   height: 100% 
 }
 
-body { 
+body {
+  background-color: #74B0B4; 
   height: 100%; margin: 0; padding: 0 
 }
 
-#map-canvas { 
-  height: 100% 
+#name {
+  text-align: center;
+  vertical-align: middle;
+  font-size: 350%;
+  margin: 1% auto;
+  width: 30%;
+  height: 8%;
+  font-family: 'Nunito', sans-serif;
+  color: #295C5E;
+  border: 1px solid #ABCCCF;
+  border-radius: 15px;
+  background-color: #E8EBCC;
+}
+
+#map-canvas {
+  margin: 1%;
+  height: 80%;
+  width: 75%; 
+}
+
+img {
+  width: 200px;
+  height: auto;
 }
 
 .info {
+  text-align: center;
+  font-size: 200%;
+  font-family: 'Nunito', sans-serif;
+  color: #295C5E;
+  border: 1px solid #ABCCCF;
+  border-radius: 15px;
+  background-color: #E8EBCC;
+  padding: 5px;
   position: fixed;
-  top: 0%;
-  right: 40%;
-  visibility: hidden;
+  top: 1%;
+  right: 1%;
+  width: 20%;
+  z-index: 1;
 }
