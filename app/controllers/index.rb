@@ -1,5 +1,11 @@
-get '/' do
+require 'json'
 
+get '/' do
+	erb :area
+end
+
+
+get '/bars' do
 	erb :index
 end
 
